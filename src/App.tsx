@@ -1,16 +1,21 @@
-import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Layout } from "./components/Layout";
+import { HomePage } from "./pages/HomePage";
+import { AppPage } from "./pages/AppPage";
+import { ProfilePage } from "./pages/ProfilePage";
+import { FeedPage } from "./pages/FeedPage";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50">
-      <div className="mx-auto max-w-3xl p-6">
-        <h1 className="text-3xl font-semibold tracking-tight">
-          Modern 43 Things
-        </h1>
-        <p className="mt-2 text-slate-400">
-          A modern goal tracking social app.
-        </p>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/app" element={<AppPage />} />
+          <Route path="/feed" element={<FeedPage />} />
+          <Route path="/u/:username" element={<ProfilePage />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
