@@ -27,7 +27,7 @@ function NavItem({ to, children }: NavItemProps) {
   );
 }
 
-export function Layout({ children }: LayoutProps) {
+export function PublicLayout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen">
       <header className="border-b border-[rgb(var(--border))]">
